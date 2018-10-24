@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+  <div class="row">
+    <div class="col-md-4 offset-md-4 col-xs-8 offset-xs-2">
+      <h1>Sign In</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 offset-md-4 col-xs-8 offset-xs-2">
+      {{ wtf.quick_form(form) }}
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-4 offset-md-4 col-xs-8 offset-xs-2">
+      <p>
+        Forgot Your Password? <a href="{{ url_for('reset_password_request')}}">Click to Reset It</a>
+      </p>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-4 offset-md-4 col-xs-8 offset-xs-2">
+      <p>New User? <a href="{{ url_for('register') }}">Click to
+        Register!</a>
+      </p>
+    </div>
+  </div>
+{% endblock %}
